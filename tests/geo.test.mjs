@@ -13,9 +13,9 @@ test("offsetLatLng and distanceMeters agree within 0.5 %", () => {
   assert.equal(distanceMeters(center, center), 0);
 });
 
-test("known distance: Budapest to Vienna is about 214 km", () => {
-  const d = distanceMeters({ lat: 47.4979, lng: 19.0402 }, { lat: 48.2082, lng: 16.3738 });
-  assert.ok(Math.abs(d - 214_000) < 3_000, String(d));
+test("known distance: London to Paris is about 344 km", () => {
+  const d = distanceMeters({ lat: 51.5074, lng: -0.1278 }, { lat: 48.8566, lng: 2.3522 });
+  assert.ok(Math.abs(d - 344_000) < 3_000, String(d));
 });
 
 test("formatDistance", () => {
