@@ -1,0 +1,93 @@
+/* Style guide page only. */
+.sg-intro { padding-block: var(--space-12) var(--space-8); }
+.sg-intro h1 { font-size: var(--text-hero); font-weight: 900; line-height: 0.9; max-width: 12ch; }
+.sg-intro p { max-width: 70ch; font-size: var(--text-lg); line-height: 1.45; }
+.sg-section { padding-block: var(--space-12); border-top: 2px solid var(--color-asphalt); }
+.sg-lede { max-width: 70ch; color: var(--color-kerb); }
+.sg-sub { margin-top: var(--space-8); }
+.sg-cols { display: grid; grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr)); gap: var(--space-8); margin-top: var(--space-8); }
+.sg-list { padding-left: 1.2em; margin: 0; }
+.sg-list li { margin-bottom: var(--space-2); }
+
+.logo-grid { list-style: none; padding: 0; margin: var(--space-6) 0 0; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: var(--space-4); }
+.logo-tile { display: flex; flex-direction: column; }
+.logo-tile--wide { grid-column: span 2; }
+.logo-stage {
+  display: flex; align-items: center; justify-content: center; gap: var(--space-4);
+  min-height: 13rem; padding: var(--space-8);
+  background: var(--color-curb); border: 2px solid var(--color-line); border-radius: var(--radius-md);
+}
+.logo-stage img { max-height: 10rem; width: auto; }
+.logo-tile--wide .logo-stage img { width: min(100%, 22rem); }
+.logo-stage--dark { background: var(--color-asphalt); border-color: var(--color-asphalt); }
+.logo-stage--mustard { background: var(--color-mustard); border-color: var(--color-mustard); }
+.logo-stage--red { background: var(--color-ketchup); border-color: var(--color-ketchup); }
+.logo-stage--fog { background: var(--color-fog); border-color: var(--color-fog); }
+.logo-stage .logo-img-icon { width: 8.75rem; }
+.logo-stage .logo-img-app { width: 7.5rem; }
+.logo-stage .logo-img-stacked { width: 11rem; }
+.favicon-row { align-items: flex-end; }
+.favicon-row img { width: auto; image-rendering: auto; }
+.logo-name { font-weight: 700; margin: var(--space-2) 0 0; }
+.logo-files { display: flex; flex-wrap: wrap; gap: var(--space-3); font-size: var(--text-sm); margin: 0; }
+
+.swatches { list-style: none; padding: 0; margin: var(--space-6) 0 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr)); gap: var(--space-4); }
+.swatch { display: grid; gap: 0.15rem; font-size: var(--text-sm); }
+.swatch-chip { height: 5.5rem; border-radius: var(--radius-md); border: 2px solid var(--color-asphalt); margin-bottom: var(--space-2); }
+.swatch-name { font-family: var(--font-display); font-weight: 800; font-size: var(--text-lg); }
+.swatch-role { color: var(--color-kerb); }
+.swatch-contrast { font-size: var(--text-xs); }
+code { font-family: ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace; font-size: 0.9em; }
+
+.type-card { padding: var(--space-6); border: 2px solid var(--color-asphalt); border-radius: var(--radius-md); }
+.type-meta { font-weight: 700; color: var(--color-kerb); font-size: var(--text-sm); }
+.type-display { font-family: var(--font-display); font-weight: 900; font-size: var(--text-2xl); line-height: 0.95; }
+.type-body-sample { font-size: var(--text-lg); }
+.type-glyphs { font-size: var(--text-xl); letter-spacing: 0.04em; }
+.type-glyphs--display { font-family: var(--font-display); font-weight: 800; }
+.scale { border-collapse: collapse; margin-top: var(--space-8); width: 100%; max-width: 44rem; }
+.scale caption { text-align: left; font-weight: 700; margin-bottom: var(--space-2); }
+.scale th, .scale td { text-align: left; padding: var(--space-2) var(--space-4) var(--space-2) 0; border-bottom: 1px solid var(--color-line); }
+
+.component-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr)); gap: var(--space-6); margin-top: var(--space-6); }
+.component { padding: var(--space-6); background: var(--color-fog); border-radius: var(--radius-md); }
+.component--wide { grid-column: 1 / -1; }
+.component-row { display: flex; flex-wrap: wrap; gap: var(--space-3); align-items: center; }
+.component-note { font-size: var(--text-sm); color: var(--color-kerb); margin: var(--space-4) 0 0; }
+.sg-gap { margin-top: var(--space-4); }
+.pins { gap: var(--space-6); }
+.pins .truck-marker { display: block; }
+.sg-ticket { max-width: 26rem; }
+
+.space-scale { list-style: none; padding: 0; margin: var(--space-4) 0 0; display: grid; gap: var(--space-2); }
+.space-scale li { display: flex; align-items: center; gap: var(--space-4); font-size: var(--text-sm); }
+.space-bar { display: inline-block; height: 1rem; background: var(--color-ketchup); border-radius: 2px; }
+.space-1 { width: var(--space-1); } .space-2 { width: var(--space-2); } .space-3 { width: var(--space-3); }
+.space-4 { width: var(--space-4); } .space-6 { width: var(--space-6); } .space-8 { width: var(--space-8); }
+.space-12 { width: var(--space-12); } .space-16 { width: var(--space-16); }
+.tree { background: var(--color-asphalt); color: var(--color-curb); padding: var(--space-6); border-radius: var(--radius-md); overflow-x: auto; font-size: var(--text-sm); line-height: 1.6; }
+
+@media (max-width: 960px) {
+  .logo-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 640px) {
+  .logo-grid { grid-template-columns: 1fr; }
+  .logo-tile--wide { grid-column: auto; }
+}
+
+/* swatches:start (generated by tools/build_tokens.mjs) */
+.swatch-chip[data-color="asphalt"] { background: var(--color-asphalt); }
+.swatch-chip[data-color="asphalt-soft"] { background: var(--color-asphalt-soft); }
+.swatch-chip[data-color="ketchup"] { background: var(--color-ketchup); }
+.swatch-chip[data-color="ketchup-dark"] { background: var(--color-ketchup-dark); }
+.swatch-chip[data-color="mustard"] { background: var(--color-mustard); }
+.swatch-chip[data-color="mustard-light"] { background: var(--color-mustard-light); }
+.swatch-chip[data-color="curb"] { background: var(--color-curb); }
+.swatch-chip[data-color="fog"] { background: var(--color-fog); }
+.swatch-chip[data-color="kerb"] { background: var(--color-kerb); }
+.swatch-chip[data-color="smoke"] { background: var(--color-smoke); }
+.swatch-chip[data-color="line"] { background: var(--color-line); }
+.swatch-chip[data-color="lettuce"] { background: var(--color-lettuce); }
+.swatch-chip[data-color="amber"] { background: var(--color-amber); }
+.swatch-chip[data-color="you"] { background: var(--color-you); }
+/* swatches:end */

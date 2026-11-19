@@ -1,0 +1,120 @@
+// SYNTHETIC DEMO DATA. Every truck, menu item and price below is invented for this concept and does
+// not describe a real business. Positions are offsets in metres (east, north) from the map centre,
+// so the demo trucks can be placed around the default city or around the visitor's location.
+// Replace this module with your API (see README "Swap in real data").
+
+export const DEFAULT_CENTER = { lat: 30.2672, lng: -97.7431, label: "downtown Austin, TX" };
+
+const lunch = [["11:00", "15:00"]];
+const lunchDinner = [["11:00", "14:30"], ["17:00", "21:30"]];
+
+export const TRUCKS = [
+  {
+    id: "taco-orbit",
+    name: "Taco Orbit 9",
+    cuisine: "Tacos",
+    offset: [-420, 310],
+    blurb: "Corn tortillas pressed to order, salsas from mild to volcanic.",
+    menu: [["Al pastor taco", "$4"], ["Mushroom & poblano taco", "$4"], ["Elote cup", "$5"]],
+    hours: { mon: lunchDinner, tue: lunchDinner, wed: lunchDinner, thu: lunchDinner, fri: [["11:00", "23:00"]], sat: [["12:00", "23:00"]], sun: [] },
+  },
+  {
+    id: "brisket-boulevard",
+    name: "Brisket Boulevard",
+    cuisine: "BBQ",
+    offset: [880, -260],
+    blurb: "Post-oak smoked brisket, sliced until it sells out.",
+    menu: [["Brisket plate", "$16"], ["Pulled jackfruit sandwich", "$12"], ["Pickles & slaw", "$4"]],
+    hours: { tue: lunch, wed: lunch, thu: lunch, fri: [["11:00", "20:00"]], sat: [["11:00", "20:00"]], sun: [["11:00", "16:00"]] },
+  },
+  {
+    id: "noodle-nomad",
+    name: "Noodle Nomad",
+    cuisine: "Asian",
+    offset: [150, 760],
+    blurb: "Hand-pulled noodles in chilli oil or slow beef broth.",
+    menu: [["Chilli oil noodles", "$11"], ["Beef broth noodles", "$13"], ["Cucumber salad", "$5"]],
+    hours: { mon: lunchDinner, tue: lunchDinner, wed: lunchDinner, thu: lunchDinner, fri: lunchDinner, sat: [["17:00", "23:00"]] },
+  },
+  {
+    id: "crepe-escape",
+    name: "Crêpe Escape",
+    cuisine: "Dessert",
+    offset: [-1150, -540],
+    blurb: "Sweet and savoury buckwheat crêpes, folded to eat on the move.",
+    menu: [["Lemon & sugar crêpe", "$7"], ["Ham, egg & gruyère galette", "$11"], ["Hot chocolate", "$4"]],
+    hours: { wed: [["14:00", "22:00"]], thu: [["14:00", "22:00"]], fri: [["14:00", "23:59"]], sat: [["10:00", "23:59"]], sun: [["10:00", "20:00"]] },
+  },
+  {
+    id: "falafel-fleet",
+    name: "Falafel Fleet",
+    cuisine: "Mediterranean",
+    offset: [610, 520],
+    blurb: "Green falafel fried in small batches, wrapped or in a bowl.",
+    menu: [["Falafel wrap", "$10"], ["Halloumi bowl", "$13"], ["Hummus & warm pita", "$7"]],
+    hours: { mon: lunch, tue: lunch, wed: lunch, thu: lunch, fri: lunch, sat: [["12:00", "18:00"]] },
+  },
+  {
+    id: "pierogi-parade",
+    name: "Pierogi Parade",
+    cuisine: "European",
+    offset: [-260, -880],
+    blurb: "Potato-cheese and sauerkraut pierogi with brown butter onions.",
+    menu: [["Six classic pierogi", "$10"], ["Sauerkraut & mushroom pierogi", "$11"], ["Beet salad", "$6"]],
+    hours: { thu: [["16:00", "22:00"]], fri: [["16:00", "23:00"]], sat: [["12:00", "23:00"]], sun: [["12:00", "19:00"]] },
+  },
+  {
+    id: "bao-bus",
+    name: "Bao Bus",
+    cuisine: "Asian",
+    offset: [1320, 940],
+    blurb: "Steamed bao with crispy tofu, pork belly or fried chicken.",
+    menu: [["Crispy tofu bao", "$5"], ["Pork belly bao", "$6"], ["Sesame fries", "$5"]],
+    hours: { mon: lunchDinner, wed: lunchDinner, thu: lunchDinner, fri: lunchDinner, sat: lunchDinner, sun: lunch },
+  },
+  {
+    id: "mango-moon",
+    name: "Mango Moon",
+    cuisine: "Dessert",
+    offset: [-760, 1080],
+    blurb: "Mango sticky rice, fruit cups and shaved ice in summer flavours.",
+    menu: [["Mango sticky rice", "$8"], ["Shaved ice", "$6"], ["Fresh fruit cup", "$5"]],
+    hours: { mon: [["12:00", "20:00"]], tue: [["12:00", "20:00"]], wed: [["12:00", "20:00"]], thu: [["12:00", "20:00"]], fri: [["12:00", "22:00"]], sat: [["12:00", "22:00"]], sun: [["12:00", "20:00"]] },
+  },
+  {
+    id: "bean-signal",
+    name: "Bean Signal Coffee",
+    cuisine: "Coffee",
+    offset: [40, -140],
+    blurb: "Espresso bar on wheels for the morning crowd.",
+    menu: [["Flat white", "$4"], ["Cold brew", "$4"], ["Cardamom bun", "$4"]],
+    hours: { mon: [["07:00", "13:00"]], tue: [["07:00", "13:00"]], wed: [["07:00", "13:00"]], thu: [["07:00", "13:00"]], fri: [["07:00", "13:00"]], sat: [["08:00", "14:00"]] },
+  },
+  {
+    id: "arepa-atlas",
+    name: "Arepa Atlas",
+    cuisine: "Latin American",
+    offset: [-1480, 260],
+    blurb: "Griddled corn arepas split and stuffed to order.",
+    menu: [["Reina pepiada arepa", "$9"], ["Black bean & plantain arepa", "$9"], ["Tequeños", "$6"]],
+    hours: { mon: lunchDinner, tue: lunchDinner, wed: lunchDinner, thu: lunchDinner, fri: lunchDinner, sat: lunchDinner },
+  },
+  {
+    id: "slice-shuttle",
+    name: "Slice Shuttle",
+    cuisine: "Pizza",
+    offset: [380, -1240],
+    blurb: "Wood-fired slices for the late crowd, open past midnight on weekends.",
+    menu: [["Margherita slice", "$5"], ["Spicy honey pepperoni slice", "$6"], ["Garlic knots", "$5"]],
+    hours: { wed: [["18:00", "23:00"]], thu: [["18:00", "23:00"]], fri: [["18:00", "02:00"]], sat: [["18:00", "02:00"]], sun: [["17:00", "22:00"]] },
+  },
+  {
+    id: "leafy-lane",
+    name: "Leafy Lane Bowls",
+    cuisine: "Vegan",
+    offset: [1040, 180],
+    blurb: "Plant-based grain bowls with roasted veg and tahini.",
+    menu: [["Harvest grain bowl", "$12"], ["Smoky tempeh bowl", "$13"], ["Green juice", "$6"]],
+    hours: { mon: lunch, tue: lunch, wed: lunch, thu: lunch, fri: lunch, sat: [["10:00", "15:00"]], sun: [["10:00", "15:00"]] },
+  },
+];

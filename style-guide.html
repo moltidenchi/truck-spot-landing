@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; font-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none'">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <title>Truck Spot Style Guide</title>
+  <meta name="description" content="Logo variants, colour palette, typography and components for Truck Spot, with design tokens for developers.">
+  <meta name="theme-color" content="#FFC23C">
+  <link rel="icon" href="assets/favicon/favicon.ico" sizes="48x48">
+  <link rel="icon" href="assets/favicon/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="assets/favicon/apple-touch-icon-180.png">
+  <link rel="stylesheet" href="assets/css/tokens.css">
+  <link rel="stylesheet" href="assets/css/fonts.css">
+  <link rel="stylesheet" href="assets/css/site.css">
+  <link rel="stylesheet" href="assets/css/style-guide.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="wrap header-row">
+      <a class="brand" href="./" aria-label="Truck Spot landing page">
+        <img src="assets/logo/svg/truckspot-horizontal.svg" alt="Truck Spot" width="180" height="47">
+      </a>
+      <nav aria-label="Style guide sections">
+        <ul class="nav-list">
+          <li><a href="#logo">Logo</a></li>
+          <li><a href="#colour">Colour</a></li>
+          <li><a href="#type">Type</a></li>
+          <li><a href="#components">Components</a></li>
+          <li><a href="#files">Files</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main" class="sg">
+    <section class="sg-intro wrap" aria-labelledby="sg-title">
+      <h1 id="sg-title">Truck Spot Style Guide</h1>
+      <p>The design handoff for the logo and landing page. Instead of a Figma file, everything here is the real thing: the live components use the same CSS custom properties that are listed below, and the same values ship as <a href="docs/design-tokens/tokens.json">tokens.json</a> (W3C design tokens format) and <a href="docs/design-tokens/tokens.css">tokens.css</a>, so a designer can rebuild the library in any tool and a developer can use the values directly.</p>
+    </section>
+
+    <section class="sg-section wrap" id="logo" aria-labelledby="logo-title">
+      <h2 id="logo-title">Logo</h2>
+      <p class="sg-lede">A map pin leaning into the direction of travel, with a scalloped food-truck awning in its head and three speed lines behind it: find a spot, street food, on the move. The wordmark is Big Shoulders Display Black, slanted 8° to match the pin, converted to outlines so the files need no font.</p>
+      <ul class="logo-grid">
+        <li class="logo-tile logo-tile--wide">
+          <div class="logo-stage"><img src="assets/logo/svg/truckspot-horizontal.svg" alt="Truck Spot horizontal logo, colour" width="320" height="84"></div>
+          <p class="logo-name">Horizontal, colour</p>
+          <p class="logo-files"><a href="assets/logo/svg/truckspot-horizontal.svg">SVG</a> <a href="assets/logo/png/truckspot-horizontal-2000w.png">PNG 2000 px</a> <a href="assets/logo/png/truckspot-horizontal-600w.png">PNG 600 px</a></p>
+        </li>
+        <li class="logo-tile logo-tile--wide">
+          <div class="logo-stage logo-stage--dark"><img src="assets/logo/svg/truckspot-horizontal-on-dark.svg" alt="Truck Spot horizontal logo for dark backgrounds" width="320" height="84"></div>
+          <p class="logo-name">Horizontal, on dark</p>
+          <p class="logo-files"><a href="assets/logo/svg/truckspot-horizontal-on-dark.svg">SVG</a> <a href="assets/logo/png/truckspot-horizontal-on-dark-2000w.png">PNG 2000 px</a></p>
+        </li>
+        <li class="logo-tile">
+          <div class="logo-stage"><img src="assets/logo/svg/truckspot-stacked.svg" class="logo-img-stacked" alt="Truck Spot stacked logo" width="180" height="168"></div>
+          <p class="logo-name">Stacked</p>
+          <p class="logo-files"><a href="assets/logo/svg/truckspot-stacked.svg">SVG</a> <a href="assets/logo/png/truckspot-stacked-2000w.png">PNG</a></p>
+        </li>
+        <li class="logo-tile">
+          <div class="logo-stage"><img src="assets/logo/svg/truckspot-icon.svg" class="logo-img-icon" alt="Truck Spot icon" width="140" height="140"></div>
+          <p class="logo-name">Icon only</p>
+          <p class="logo-files"><a href="assets/logo/svg/truckspot-icon.svg">SVG</a> <a href="assets/logo/png/truckspot-icon-1024.png">PNG 1024</a></p>
+        </li>
+        <li class="logo-tile">
+          <div class="logo-stage logo-stage--mustard"><img src="assets/logo/svg/truckspot-icon-mono-black.svg" class="logo-img-icon" alt="Truck Spot icon, mono black" width="140" height="140"></div>
+          <p class="logo-name">Icon, mono black</p>
+          <p class="logo-files"><a href="assets/logo/svg/truckspot-icon-mono-black.svg">SVG</a> <a href="assets/logo/png/truckspot-icon-mono-black-1024.png">PNG 1024</a></p>
+        </li>
+        <li class="logo-tile">
+          <div class="logo-stage logo-stage--red"><img src="assets/logo/svg/truckspot-icon-mono-white.svg" class="logo-img-icon" alt="Truck Spot icon, mono white" width="140" height="140"></div>
+          <p class="logo-name">Icon, mono white</p>
+          <p class="logo-files"><a href="assets/logo/svg/truckspot-icon-mono-white.svg">SVG</a> <a href="assets/logo/png/truckspot-icon-mono-white-1024.png">PNG 1024</a></p>
+        </li>
+        <li class="logo-tile logo-tile--wide">
+          <div class="logo-stage logo-stage--fog"><img src="assets/logo/svg/truckspot-horizontal-mono-black.svg" alt="Truck Spot horizontal logo, mono black" width="320" height="84"></div>
+          <p class="logo-name">Horizontal, mono black</p>
+          <p class="logo-files"><a href="assets/logo/svg/truckspot-horizontal-mono-black.svg">SVG</a> <a href="assets/logo/png/truckspot-horizontal-mono-black-2000w.png">PNG 2000 px</a></p>
+        </li>
+        <li class="logo-tile logo-tile--wide">
+          <div class="logo-stage logo-stage--dark"><img src="assets/logo/svg/truckspot-horizontal-mono-white.svg" alt="Truck Spot horizontal logo, mono white" width="320" height="84"></div>
+          <p class="logo-name">Horizontal, mono white</p>
+          <p class="logo-files"><a href="assets/logo/svg/truckspot-horizontal-mono-white.svg">SVG</a> <a href="assets/logo/png/truckspot-horizontal-mono-white-2000w.png">PNG 2000 px</a></p>
+        </li>
+        <li class="logo-tile">
+          <div class="logo-stage"><img src="assets/logo/svg/truckspot-app-icon.svg" class="logo-img-app" alt="Truck Spot app icon" width="120" height="120"></div>
+          <p class="logo-name">App icon</p>
+          <p class="logo-files"><a href="assets/logo/svg/truckspot-app-icon.svg">SVG</a> <a href="assets/favicon/icon-512.png">512</a> <a href="assets/favicon/apple-touch-icon-180.png">180</a></p>
+        </li>
+        <li class="logo-tile">
+          <div class="logo-stage favicon-row">
+            <img src="assets/favicon/favicon-16.png" alt="Favicon at 16 pixels" width="16" height="16">
+            <img src="assets/favicon/favicon-32.png" alt="Favicon at 32 pixels" width="32" height="32">
+            <img src="assets/favicon/favicon-48.png" alt="Favicon at 48 pixels" width="48" height="48">
+          </div>
+          <p class="logo-name">Favicon, actual size</p>
+          <p class="logo-files"><a href="assets/favicon/favicon.ico">ICO</a> <a href="assets/favicon/favicon.svg">SVG</a> <a href="assets/favicon/favicon-32.png">PNG</a></p>
+        </li>
+      </ul>
+      <div class="sg-cols">
+        <div>
+          <h3>Use It Like This</h3>
+          <ul class="sg-list">
+            <li>Clear space on every side: the height of the pin head (a quarter of the icon height).</li>
+            <li>Minimum size: horizontal lockup 120 px wide on screen; icon 24 px. Below 24 px use the favicon, which drops the speed lines.</li>
+            <li>On mustard, white or fog use the colour logo; on asphalt or photos use “on dark” or mono white; on ketchup use mono white.</li>
+          </ul>
+        </div>
+        <div>
+          <h3>Please Don’t</h3>
+          <ul class="sg-list">
+            <li>Straighten the pin or the wordmark; the lean is the motion.</li>
+            <li>Recolour the awning or put the colour icon on ketchup red.</li>
+            <li>Retype the wordmark in another font or add effects and outlines.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="sg-section wrap" id="colour" aria-labelledby="colour-title">
+      <h2 id="colour-title">Colour</h2>
+      <p class="sg-lede">Ketchup and mustard on asphalt and white: the colours of the street-food counter. Mustard carries big surfaces, ketchup marks the things you act on, and asphalt is the ink. Contrast ratios are WCAG 2.x, computed from the tokens by the test suite.</p>
+      <ul class="swatches">
+<!-- palette:start -->
+        <li class="swatch">
+          <span class="swatch-chip" data-color="asphalt"></span>
+          <span class="swatch-name">Asphalt</span>
+          <span><code>#1D2127</code> <code>--color-asphalt</code></span>
+          <span class="swatch-role">Ink: text, dark surfaces, wordmark</span>
+          <span class="swatch-contrast">16.2:1 on white, 1.0:1 on asphalt</span>
+        </li>
+        <li class="swatch">
+          <span class="swatch-chip" data-color="asphalt-soft"></span>
+          <span class="swatch-name">Asphalt Soft</span>
+          <span><code>#343A44</code> <code>--color-asphalt-soft</code></span>
+          <span class="swatch-role">Hover state of dark buttons</span>
+          <span class="swatch-contrast">11.4:1 on white, 1.4:1 on asphalt</span>
+        </li>
+        <li class="swatch">
+          <span class="swatch-chip" data-color="ketchup"></span>
+          <span class="swatch-name">Ketchup</span>
+          <span><code>#C8281B</code> <code>--color-ketchup</code></span>
+          <span class="swatch-role">Brand red: logo pin, primary buttons, links on light</span>
+          <span class="swatch-contrast">5.6:1 on white, 2.9:1 on asphalt</span>
+        </li>
+        <li class="swatch">
+          <span class="swatch-chip" data-color="ketchup-dark"></span>
+          <span class="swatch-name">Ketchup Dark</span>
+          <span><code>#A11F14</code> <code>--color-ketchup-dark</code></span>
+          <span class="swatch-role">Hover/pressed state of ketchup</span>
+          <span class="swatch-contrast">7.7:1 on white, 2.1:1 on asphalt</span>
+        </li>
+        <li class="swatch">
+          <span class="swatch-chip" data-color="mustard"></span>
+          <span class="swatch-name">Mustard</span>
+          <span><code>#FFC23C</code> <code>--color-mustard</code></span>
+          <span class="swatch-role">Brand yellow: hero, awning stripes, highlights on dark</span>
+          <span class="swatch-contrast">1.6:1 on white, 10.0:1 on asphalt</span>
+        </li>
+        <li class="swatch">
+          <span class="swatch-chip" data-color="mustard-light"></span>
+          <span class="swatch-name">Mustard Light</span>
+          <span><code>#FFE3A3</code> <code>--color-mustard-light</code></span>
+          <span class="swatch-role">Soft highlight, selected filter on light</span>
+          <span class="swatch-contrast">1.3:1 on white, 12.9:1 on asphalt</span>
+        </li>
+        <li class="swatch">
+          <span class="swatch-chip" data-color="curb"></span>
+          <span class="swatch-name">Curb</span>
+          <span><code>#FFFFFF</code> <code>--color-curb</code></span>
+          <span class="swatch-role">Surface: page and ticket background</span>
+          <span class="swatch-contrast">1.0:1 on white, 16.2:1 on asphalt</span>
+        </li>
+        <li class="swatch">
+          <span class="swatch-chip" data-color="fog"></span>
+          <span class="swatch-name">Fog</span>
+          <span><code>#F1F2F4</code> <code>--color-fog</code></span>
+          <span class="swatch-role">Alternate section background</span>
+          <span class="swatch-contrast">1.1:1 on white, 14.4:1 on asphalt</span>
+        </li>
+        <li class="swatch">
+          <span class="swatch-chip" data-color="kerb"></span>
+          <span class="swatch-name">Kerb</span>
+          <span><code>#59616C</code> <code>--color-kerb</code></span>
+          <span class="swatch-role">Secondary text, input borders</span>
+          <span class="swatch-contrast">6.3:1 on white, 2.6:1 on asphalt</span>
+        </li>
+        <li class="swatch">
+          <span class="swatch-chip" data-color="smoke"></span>
+          <span class="swatch-name">Smoke</span>
+          <span><code>#C9CDD3</code> <code>--color-smoke</code></span>
+          <span class="swatch-role">Secondary text on asphalt</span>
+          <span class="swatch-contrast">1.6:1 on white, 10.1:1 on asphalt</span>
+        </li>
+        <li class="swatch">
+          <span class="swatch-chip" data-color="line"></span>
+          <span class="swatch-name">Line</span>
+          <span><code>#D5D8DD</code> <code>--color-line</code></span>
+          <span class="swatch-role">Decorative dividers only (not for component boundaries)</span>
+          <span class="swatch-contrast">1.4:1 on white, 11.3:1 on asphalt</span>
+        </li>
+        <li class="swatch">
+          <span class="swatch-chip" data-color="lettuce"></span>
+          <span class="swatch-name">Lettuce</span>
+          <span><code>#1E7A46</code> <code>--color-lettuce</code></span>
+          <span class="swatch-role">Status: open now</span>
+          <span class="swatch-contrast">5.3:1 on white, 3.0:1 on asphalt</span>
+        </li>
+        <li class="swatch">
+          <span class="swatch-chip" data-color="amber"></span>
+          <span class="swatch-name">Amber</span>
+          <span><code>#8A4B00</code> <code>--color-amber</code></span>
+          <span class="swatch-role">Status: closing soon (text)</span>
+          <span class="swatch-contrast">6.8:1 on white, 2.4:1 on asphalt</span>
+        </li>
+        <li class="swatch">
+          <span class="swatch-chip" data-color="you"></span>
+          <span class="swatch-name">You</span>
+          <span><code>#1F5FBF</code> <code>--color-you</code></span>
+          <span class="swatch-role">Your-location dot on the map</span>
+          <span class="swatch-contrast">6.1:1 on white, 2.7:1 on asphalt</span>
+        </li>
+<!-- palette:end -->
+      </ul>
+    </section>
+
+    <section class="sg-section wrap" id="type" aria-labelledby="type-title">
+      <h2 id="type-title">Typography</h2>
+      <div class="sg-cols">
+        <div class="type-card">
+          <p class="type-meta">Display: Big Shoulders Display, 700–900</p>
+          <p class="type-display">Lunch is parked two blocks away.</p>
+          <p class="type-glyphs type-glyphs--display">Aa Bb Cc 0123456789 &amp; ? !</p>
+          <p>Condensed, sign-painted energy from Chicago’s city signage; headlines, truck names and the wordmark. Sentence case for headlines, Title Case for buttons and section titles.</p>
+        </div>
+        <div class="type-card">
+          <p class="type-meta">Text: Atkinson Hyperlegible, 400 and 700</p>
+          <p class="type-body-sample">Open now until 9:30 PM. Corn tortillas pressed to order, salsas from mild to volcanic.</p>
+          <p class="type-glyphs">Il1 O0 rn m 5S 8B</p>
+          <p>Designed by the Braille Institute for maximum character distinction, so menus, prices and hours stay readable on small screens and in sunlight.</p>
+        </div>
+      </div>
+      <table class="scale">
+        <caption>Type scale (rem, 16 px base)</caption>
+        <thead><tr><th scope="col">Token</th><th scope="col">Size</th><th scope="col">Use</th></tr></thead>
+        <tbody>
+          <tr><th scope="row"><code>--text-hero</code></th><td>3–6.5 (fluid)</td><td>Hero headline, display 900</td></tr>
+          <tr><th scope="row"><code>--text-2xl</code></th><td>3</td><td>Section titles, display 800</td></tr>
+          <tr><th scope="row"><code>--text-xl</code></th><td>2</td><td>Sub-section titles</td></tr>
+          <tr><th scope="row"><code>--text-lg</code></th><td>1.375</td><td>Lead paragraphs, footer titles</td></tr>
+          <tr><th scope="row"><code>--text-md</code></th><td>1.0625</td><td>Body text, buttons</td></tr>
+          <tr><th scope="row"><code>--text-sm</code></th><td>0.9375</td><td>Tickets, statuses, notes</td></tr>
+          <tr><th scope="row"><code>--text-xs</code></th><td>0.8125</td><td>Filter chips, fine print</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="sg-section wrap" id="components" aria-labelledby="components-title">
+      <h2 id="components-title">Components</h2>
+      <div class="component-grid">
+        <div class="component">
+          <h3>Buttons</h3>
+          <div class="component-row">
+            <button class="btn btn-ink" type="button">Use My Location</button>
+            <button class="btn btn-red" type="button">Show on Map</button>
+            <button class="btn btn-outline" type="button">Clear Filters</button>
+          </div>
+          <p class="component-note">Radius <code>--radius-md</code>, 46 px tall, 3 px asphalt focus ring offset by 3 px.</p>
+        </div>
+        <div class="component">
+          <h3>Store Buttons (Placeholders)</h3>
+          <div class="component-row">
+            <a class="store-btn" href="#components">
+              <svg class="store-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="6" y="2" width="12" height="20" rx="2.5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M10.5 18.5h3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+              <span><small>Download on the</small> App Store</span>
+            </a>
+            <a class="store-btn" href="#components">
+              <svg class="store-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 3v12m0 0-5-5m5 5 5-5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <span><small>Get it on</small> Google Play</span>
+            </a>
+          </div>
+          <p class="component-note">In-house placeholders. Before launch, swap in the official badges following Apple’s and Google’s badge guidelines.</p>
+        </div>
+        <div class="component">
+          <h3>Filter Chips</h3>
+          <div class="component-row">
+            <button class="chip" type="button" aria-pressed="true">All</button>
+            <button class="chip" type="button" aria-pressed="false">Tacos</button>
+            <button class="chip" type="button" aria-pressed="false">BBQ</button>
+            <button class="chip" type="button" aria-pressed="false">Vegan</button>
+          </div>
+          <p class="component-note">Toggle buttons with <code>aria-pressed</code>; selected state is filled asphalt, not colour alone.</p>
+        </div>
+        <div class="component">
+          <h3>Status</h3>
+          <p class="status status--open">Open now until 9:30 PM</p>
+          <p class="status status--soon">Closing soon, at 3:00 PM</p>
+          <p class="status status--closed">Closed, opens tomorrow at 11:00 AM</p>
+          <p class="component-note">Always a full sentence next to the dot, so status never depends on colour.</p>
+        </div>
+        <div class="component">
+          <h3>Email Field</h3>
+          <div class="optin">
+            <label for="sg-email">Email address</label>
+            <div class="optin-row"><input id="sg-email" type="email" autocomplete="email" placeholder="name@example.com"><button class="btn btn-ink" type="button">Get Updates</button></div>
+            <label for="sg-email-error" class="sg-gap">Email address (error state)</label>
+            <div class="optin-row"><input id="sg-email-error" type="email" autocomplete="email" value="name@example" aria-invalid="true" aria-describedby="sg-error"></div>
+            <p class="field-error" id="sg-error">Enter an email address like name@example.com.</p>
+          </div>
+        </div>
+        <div class="component">
+          <h3>Map Pins</h3>
+          <div class="component-row pins">
+            <span class="truck-marker"><svg viewBox="0 0 34 44" aria-hidden="true" focusable="false"><path class="pin-body" d="M17 42.5 4.6 24.6A15 15 0 1 1 29.4 24.6Z"/><circle cx="17" cy="15" r="5.5" fill="#FFFFFF"/></svg></span>
+            <span class="truck-marker is-closed"><svg viewBox="0 0 34 44" aria-hidden="true" focusable="false"><path class="pin-body" d="M17 42.5 4.6 24.6A15 15 0 1 1 29.4 24.6Z"/><circle cx="17" cy="15" r="5.5" fill="#FFFFFF"/></svg></span>
+            <span class="truck-marker is-active"><svg viewBox="0 0 34 44" aria-hidden="true" focusable="false"><path class="pin-body" d="M17 42.5 4.6 24.6A15 15 0 1 1 29.4 24.6Z"/><circle cx="17" cy="15" r="5.5" fill="#FFFFFF"/></svg></span>
+            <span class="you-marker"><span></span></span>
+          </div>
+          <p class="component-note">Open (ketchup), closed (kerb grey), selected (asphalt, 125%), and your location (blue).</p>
+        </div>
+        <div class="component component--wide">
+          <h3>Ticket</h3>
+          <article class="ticket sg-ticket" aria-labelledby="sg-ticket-name">
+            <div class="ticket-top"><h4 class="ticket-name" id="sg-ticket-name">Taco Orbit 9</h4><span class="ticket-distance">0.3 mi</span></div>
+            <p class="ticket-cuisine"><span>Tacos</span><span class="demo-badge">Demo truck</span></p>
+            <p class="status status--open">Open now until 2:30 PM</p>
+            <p class="ticket-blurb">Corn tortillas pressed to order, salsas from mild to volcanic.</p>
+            <ul class="menu" aria-label="Sample menu"><li><span>Al pastor taco</span><span class="price">$4</span></li><li><span>Mushroom &amp; poblano taco</span><span class="price">$4</span></li><li><span>Elote cup</span><span class="price">$5</span></li></ul>
+          </article>
+          <p class="component-note">An order slip: 2 px asphalt border, hard 4 px offset shadow, perforated top edge, dotted menu leaders. Selected tickets switch border and shadow to ketchup.</p>
+        </div>
+      </div>
+      <h3 class="sg-sub">Spacing</h3>
+      <ol class="space-scale" aria-label="Spacing scale">
+        <li><span class="space-bar space-1"></span><code>--space-1</code> 4 px</li>
+        <li><span class="space-bar space-2"></span><code>--space-2</code> 8 px</li>
+        <li><span class="space-bar space-3"></span><code>--space-3</code> 12 px</li>
+        <li><span class="space-bar space-4"></span><code>--space-4</code> 16 px</li>
+        <li><span class="space-bar space-6"></span><code>--space-6</code> 24 px</li>
+        <li><span class="space-bar space-8"></span><code>--space-8</code> 32 px</li>
+        <li><span class="space-bar space-12"></span><code>--space-12</code> 48 px</li>
+        <li><span class="space-bar space-16"></span><code>--space-16</code> 64 px</li>
+      </ol>
+    </section>
+
+    <section class="sg-section wrap" id="files" aria-labelledby="files-title">
+      <h2 id="files-title">Files</h2>
+      <pre class="tree"><code>assets/logo/svg/     every logo variant as SVG (outlined, no fonts needed)
+assets/logo/png/     PNG exports: icons 512/1024, lockups 600/2000 px wide, transparent
+assets/favicon/      favicon.ico (16/32/48), favicon.svg, 16/32/48 PNG, apple-touch 180, 192, 512
+assets/fonts/        self-hosted WOFF2 + OFL licence texts
+docs/design-tokens/  tokens.json (source of truth) and generated tokens.css
+assets/css/          tokens.css (generated), fonts.css, site.css, style-guide.css</code></pre>
+      <p>The production zip on the GitHub release contains all of the above plus the page source.</p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-fine">
+      <p>Truck Spot concept for a Freelancer.com design contest. <a href="./">Back to the landing page</a>.</p>
+    </div>
+  </footer>
+</body>
+</html>

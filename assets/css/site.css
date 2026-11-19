@@ -1,0 +1,341 @@
+/* Truck Spot landing page. Every colour, size and radius comes from tokens.css. */
+
+*,
+*::before,
+*::after { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; scroll-padding-top: var(--space-4); }
+
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  font-size: var(--text-md);
+  line-height: 1.55;
+  color: var(--color-asphalt);
+  background: var(--color-curb);
+}
+
+img, svg { display: block; max-width: 100%; }
+img { height: auto; }
+
+h1, h2, h3, h4 {
+  font-family: var(--font-display);
+  font-weight: 800;
+  line-height: 0.98;
+  letter-spacing: 0.005em;
+  margin: 0 0 var(--space-4);
+  text-wrap: balance;
+}
+h2 { font-size: var(--text-2xl); }
+h3 { font-size: var(--text-lg); line-height: 1.05; }
+p { margin: 0 0 var(--space-4); text-wrap: pretty; }
+
+a { color: var(--color-ketchup); text-underline-offset: 0.18em; }
+a:hover { color: var(--color-ketchup-dark); }
+
+:focus-visible {
+  outline: 3px solid var(--color-asphalt);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+.wrap { width: min(100% - 2 * var(--space-6), var(--layout-max-width)); margin-inline: auto; }
+
+.sr-only {
+  position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+  overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0;
+}
+
+.skip-link {
+  position: absolute; left: var(--space-4); top: -100px; z-index: 2000;
+  padding: var(--space-3) var(--space-4);
+  background: var(--color-asphalt); color: var(--color-curb);
+  border-radius: var(--radius-sm); font-weight: 700;
+}
+.skip-link:focus { top: var(--space-4); }
+.skip-link:focus-visible { outline-color: var(--color-mustard); }
+
+/* ---------- Buttons ---------- */
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: var(--space-2);
+  min-height: 2.875rem; padding: 0 var(--space-6);
+  border: 2px solid transparent; border-radius: var(--radius-md);
+  font: 700 var(--text-md) / 1 var(--font-body);
+  text-decoration: none; cursor: pointer;
+  transition: background-color 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+}
+.btn-ink { background: var(--color-asphalt); color: var(--color-curb); }
+.btn-ink:hover { background: var(--color-asphalt-soft); color: var(--color-curb); }
+.btn-red { background: var(--color-ketchup); color: var(--color-curb); }
+.btn-red:hover { background: var(--color-ketchup-dark); color: var(--color-curb); }
+.btn-outline { background: transparent; color: var(--color-asphalt); border-color: var(--color-asphalt); }
+.btn-outline:hover { background: var(--color-asphalt); color: var(--color-curb); }
+.btn[aria-busy="true"] { cursor: progress; opacity: 0.85; }
+
+/* Store buttons: in-house placeholders, deliberately not the official badges. */
+.store-buttons { display: flex; flex-wrap: wrap; gap: var(--space-3); margin-bottom: var(--space-2); }
+.store-btn {
+  display: inline-flex; align-items: center; gap: var(--space-3);
+  min-height: 3.25rem; padding: var(--space-2) var(--space-6) var(--space-2) var(--space-4);
+  background: var(--color-asphalt); color: var(--color-curb);
+  border: 2px solid var(--color-asphalt); border-radius: var(--radius-pill);
+  text-decoration: none; font-weight: 700; font-size: var(--text-md); line-height: 1.1;
+}
+.store-btn small { display: block; font-weight: 400; font-size: var(--text-xs); }
+.store-btn:hover { background: var(--color-asphalt-soft); color: var(--color-curb); }
+.store-icon { width: 1.5rem; height: 1.5rem; flex: none; }
+.store-buttons--dark .store-btn { background: var(--color-curb); color: var(--color-asphalt); border-color: var(--color-curb); }
+.store-buttons--dark .store-btn:hover { background: var(--color-mustard); border-color: var(--color-mustard); color: var(--color-asphalt); }
+.store-note { font-size: var(--text-sm); margin: 0; }
+
+/* ---------- Header ---------- */
+.site-header { background: var(--color-mustard); }
+.header-row {
+  display: flex; align-items: center; gap: var(--space-6);
+  min-height: var(--layout-header-height); padding-block: var(--space-3);
+}
+.brand { display: block; flex: none; }
+.brand img { width: 168px; }
+.nav-list { display: flex; gap: var(--space-6); list-style: none; margin: 0; padding: 0; }
+.nav-list a {
+  color: var(--color-asphalt); font-weight: 700; text-decoration: none;
+  display: inline-block; padding-block: var(--space-2);
+}
+.nav-list a:hover { text-decoration: underline; text-decoration-thickness: 2px; }
+.site-header nav { margin-left: auto; }
+.header-cta { min-height: 2.5rem; padding-inline: var(--space-4); white-space: nowrap; }
+
+/* ---------- Hero ---------- */
+.hero { background: var(--color-mustard); overflow: clip; }
+.hero-grid {
+  display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 5fr);
+  align-items: end; gap: var(--space-8);
+  padding-block: var(--space-12) 0;
+}
+.hero-copy { padding-bottom: var(--space-16); }
+.hero h1 {
+  font-size: var(--text-hero); font-weight: 900; line-height: 0.9;
+  letter-spacing: -0.005em; max-width: 13ch; margin-bottom: var(--space-6);
+}
+.hero-lede { font-size: var(--text-lg); line-height: 1.4; max-width: 34ch; margin-bottom: var(--space-8); }
+.hero-live { margin: var(--space-6) 0 0; font-weight: 700; }
+.hero-live a { color: var(--color-asphalt); text-decoration-thickness: 2px; }
+.hero-art { align-self: stretch; display: flex; align-items: flex-end; margin-right: calc(-1 * var(--space-6)); }
+.hero-art svg { width: 100%; height: auto; }
+
+@media (prefers-reduced-motion: no-preference) {
+  .road-line { animation: road-dash 1.8s cubic-bezier(.2, .7, .2, 1) both; }
+  .hero-truck { animation: truck-arrive 1.8s cubic-bezier(.2, .7, .2, 1) both; }
+}
+@keyframes road-dash { from { stroke-dashoffset: 240; } to { stroke-dashoffset: 0; } }
+@keyframes truck-arrive { from { translate: -70px 30px; } to { translate: 0 0; } }
+
+/* ---------- Finder: map + tickets ---------- */
+.finder-section { padding-block: var(--space-16) var(--space-16); background: var(--color-curb); }
+.finder-head {
+  display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between;
+  gap: var(--space-6); margin-bottom: var(--space-8);
+}
+.section-lede { max-width: 52ch; color: var(--color-kerb); margin: 0; }
+.locate { display: grid; justify-items: start; gap: var(--space-2); max-width: 26rem; }
+.locate-status { margin: 0; font-size: var(--text-sm); color: var(--color-kerb); min-height: 1.5em; }
+
+.finder { display: grid; grid-template-columns: minmax(0, 3fr) minmax(0, 2fr); gap: var(--space-8); align-items: stretch; }
+.finder-list { display: flex; flex-direction: column; min-height: 0; }
+/* Desktop: the list scrolls beside the map, so the map and the ticket you pick stay on screen together. */
+.tickets-scroll {
+  flex: 1 1 0; min-height: 16rem; overflow-y: auto; overscroll-behavior: contain;
+  padding: var(--space-2) var(--space-3) var(--space-3) var(--space-1); margin-inline: calc(-1 * var(--space-1));
+  scrollbar-gutter: stable;
+}
+.tickets-scroll:focus-visible { outline-offset: 0; }
+.truck-map {
+  height: min(82vh, 48rem); min-height: 22rem;
+  border-radius: var(--radius-md); border: 2px solid var(--color-asphalt);
+  background: var(--color-fog);
+}
+.map-help { font-size: var(--text-xs); color: var(--color-kerb); margin: var(--space-2) 0 0; }
+.noscript { padding: var(--space-4); background: var(--color-fog); }
+
+.list-title { font-size: var(--text-xl); margin-bottom: var(--space-3); }
+.filters { display: flex; flex-wrap: wrap; gap: 0.375rem; margin-bottom: var(--space-3); }
+.chip {
+  min-height: 2rem; padding: 0 var(--space-3);
+  border: 2px solid var(--color-asphalt); border-radius: var(--radius-pill);
+  background: var(--color-curb); color: var(--color-asphalt);
+  font: 700 var(--text-xs) / 1 var(--font-body); cursor: pointer;
+}
+.chip:hover { background: var(--color-mustard-light); }
+.chip[aria-pressed="true"] { background: var(--color-asphalt); color: var(--color-curb); }
+.list-tools { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: var(--space-2) var(--space-4); margin-bottom: var(--space-4); }
+.toggle { display: inline-flex; align-items: center; gap: var(--space-2); font-weight: 700; cursor: pointer; min-height: 2rem; }
+.toggle input { width: 1.25rem; height: 1.25rem; accent-color: var(--color-ketchup); margin: 0; }
+.result-count { margin: 0; font-size: var(--text-sm); color: var(--color-kerb); }
+
+.tickets { list-style: none; margin: 0; padding: 0; display: grid; gap: var(--space-4); }
+
+/* A ticket is an order slip: perforated top edge, menu with dotted leaders. */
+.ticket {
+  position: relative;
+  padding: var(--space-6) var(--space-4) var(--space-3);
+  background: var(--color-curb);
+  border: 2px solid var(--color-asphalt);
+  border-radius: var(--radius-sm) var(--radius-sm) var(--radius-md) var(--radius-md);
+  box-shadow: 4px 4px 0 var(--color-asphalt);
+  transition: box-shadow 0.15s ease, translate 0.15s ease;
+}
+.ticket::before {
+  content: ""; position: absolute; left: 10px; right: 10px; top: 7px; height: 4px;
+  background: radial-gradient(circle, var(--color-asphalt) 1.6px, transparent 2px) 0 0 / 10px 4px repeat-x;
+  opacity: 0.35;
+}
+.ticket:hover { box-shadow: 6px 6px 0 var(--color-asphalt); translate: -1px -1px; }
+.ticket.is-active { box-shadow: 6px 6px 0 var(--color-ketchup); border-color: var(--color-ketchup); }
+.ticket:has(.ticket-locate:focus-visible) { outline: 3px solid var(--color-asphalt); outline-offset: 4px; }
+.ticket-top { display: flex; justify-content: space-between; align-items: baseline; gap: var(--space-3); }
+.ticket-name { font-size: 1.75rem; margin: 0; }
+.ticket-distance { flex: none; font-weight: 700; font-size: var(--text-sm); font-variant-numeric: tabular-nums; }
+.ticket-cuisine { display: flex; align-items: center; gap: var(--space-2); margin: var(--space-1) 0 var(--space-2); color: var(--color-kerb); font-size: var(--text-sm); }
+.status { display: flex; align-items: center; gap: var(--space-2); font-weight: 700; font-size: var(--text-sm); margin-bottom: var(--space-2); }
+.status::before { content: ""; width: 0.7rem; height: 0.7rem; border-radius: 50%; flex: none; background: var(--color-kerb); }
+.status--open { color: var(--color-lettuce); }
+.status--open::before { background: var(--color-lettuce); }
+.status--soon { color: var(--color-amber); }
+.status--soon::before { background: var(--color-amber); }
+.status--closed { color: var(--color-kerb); }
+.status--closed::before { background: transparent; border: 2px solid var(--color-kerb); }
+.ticket-blurb { font-size: var(--text-sm); margin-bottom: var(--space-2); }
+.menu { list-style: none; margin: 0 0 var(--space-2); padding: 0; font-size: var(--text-sm); }
+.menu li { display: flex; align-items: baseline; gap: var(--space-2); padding-block: 0.15rem; }
+.menu li::after { content: ""; order: 1; flex: 1; border-bottom: 2px dotted var(--color-line); translate: 0 -0.25em; }
+.menu .price { order: 2; font-weight: 700; font-variant-numeric: tabular-nums; }
+.hours { position: relative; z-index: 1; font-size: var(--text-sm); flex: 1 1 auto; }
+.hours summary { cursor: pointer; font-weight: 700; display: inline-block; padding-block: var(--space-1); }
+.hours table { border-collapse: collapse; margin-top: var(--space-2); width: 100%; }
+.hours th, .hours td { text-align: left; padding: 0.2rem var(--space-3) 0.2rem 0; vertical-align: top; font-variant-numeric: tabular-nums; }
+.hours th { font-weight: 700; width: 3.5rem; }
+.hours tr.is-today { background: var(--color-mustard-light); }
+.ticket-actions { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: var(--space-2) var(--space-3); }
+.ticket-actions:has(details[open]) .hours { flex-basis: 100%; order: 2; }
+.ticket-actions:has(details[open]) .ticket-locate { margin-left: auto; }
+.ticket-locate {
+  min-height: 2.5rem; padding: 0 var(--space-4);
+  border: 0; border-radius: var(--radius-md);
+  background: var(--color-ketchup); color: var(--color-curb);
+  font: 700 var(--text-sm) / 1 var(--font-body); cursor: pointer;
+}
+.ticket-locate:hover { background: var(--color-ketchup-dark); }
+/* Stretched target: the whole ticket shows the truck on the map; the hours toggle sits above it. */
+.ticket-locate::after { content: ""; position: absolute; inset: 0; border-radius: inherit; }
+.demo-badge { font-size: var(--text-xs); line-height: 1; padding: 0.2rem 0.4rem; border: 1px solid var(--color-kerb); border-radius: var(--radius-sm); }
+
+.empty { padding: var(--space-6); border: 2px dashed var(--color-kerb); border-radius: var(--radius-md); text-align: center; }
+.demo-note { font-size: var(--text-xs); color: var(--color-kerb); margin: var(--space-3) 0 0; }
+
+/* Leaflet overrides */
+.leaflet-container { font-family: var(--font-body); font-size: var(--text-sm); }
+.leaflet-container a { color: var(--color-ketchup); }
+.leaflet-control-attribution { font-size: 0.75rem; }
+.leaflet-bar a { width: 36px; height: 36px; line-height: 36px; color: var(--color-asphalt); }
+.truck-marker { background: none; border: 0; }
+.truck-marker svg { width: 34px; height: 44px; filter: drop-shadow(0 2px 1px rgba(29, 33, 39, 0.35)); transition: scale 0.15s ease; transform-origin: 50% 100%; }
+.truck-marker .pin-body { fill: var(--color-ketchup); stroke: var(--color-curb); stroke-width: 2; }
+.truck-marker.is-closed .pin-body { fill: var(--color-kerb); }
+.truck-marker.is-active svg { scale: 1.25; }
+.truck-marker.is-active .pin-body { fill: var(--color-asphalt); }
+.truck-marker:focus-visible { outline: 3px solid var(--color-asphalt); outline-offset: 2px; border-radius: 4px; }
+.you-marker { background: none; border: 0; }
+.you-marker span {
+  display: block; width: 18px; height: 18px; border-radius: 50%;
+  background: var(--color-you); border: 3px solid var(--color-curb); box-shadow: 0 0 0 2px var(--color-you);
+}
+.leaflet-popup-content-wrapper { border-radius: var(--radius-md); border: 2px solid var(--color-asphalt); box-shadow: 4px 4px 0 var(--color-asphalt); }
+.leaflet-popup-content { margin: var(--space-4); line-height: 1.4; }
+.leaflet-popup-content .popup p { margin: 0 0 var(--space-2); }
+.popup-name { font-family: var(--font-display); font-weight: 800; font-size: 1.4rem; line-height: 1; margin: 0 0 var(--space-1); }
+.popup-meta { margin: 0 0 var(--space-2); color: var(--color-kerb); }
+.popup .status { margin-bottom: var(--space-2); }
+.popup-link {
+  border: 0; background: none; padding: var(--space-1) 0; cursor: pointer;
+  font: 700 var(--text-sm) / 1.2 var(--font-body); color: var(--color-ketchup); text-decoration: underline;
+}
+
+/* ---------- Updates (email opt-in) ---------- */
+.updates { background: var(--color-ketchup); color: var(--color-curb); padding-block: var(--space-16); }
+.updates-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: var(--space-8); align-items: center; }
+.updates h2 { font-size: clamp(2.5rem, 1.5rem + 3vw, 4rem); font-weight: 900; max-width: 14ch; }
+.updates-copy p { font-size: var(--text-lg); max-width: 36ch; margin: 0; }
+.updates-panel {
+  background: var(--color-curb); color: var(--color-asphalt);
+  border-radius: var(--radius-md); padding: var(--space-8);
+  box-shadow: 6px 6px 0 var(--color-asphalt);
+}
+.optin label { display: block; font-weight: 700; margin-bottom: var(--space-2); }
+.optin-row { display: flex; gap: var(--space-3); flex-wrap: wrap; }
+.optin input {
+  flex: 1 1 14rem; min-width: 0; min-height: 2.875rem; padding: 0 var(--space-4);
+  border: 2px solid var(--color-kerb); border-radius: var(--radius-sm);
+  font: 400 var(--text-md) / 1.2 var(--font-body); color: var(--color-asphalt); background: var(--color-curb);
+}
+.optin input::placeholder { color: var(--color-kerb); }
+.optin input:focus-visible { outline: 3px solid var(--color-asphalt); outline-offset: 2px; border-color: var(--color-asphalt); }
+.optin input[aria-invalid="true"] { border-color: var(--color-ketchup); border-width: 3px; }
+.field-error { color: var(--color-ketchup); font-weight: 700; font-size: var(--text-sm); margin: var(--space-2) 0 0; min-height: 1.4em; }
+.field-error:not(:empty)::before { content: "! "; }
+.hint { font-size: var(--text-sm); color: var(--color-kerb); margin: var(--space-1) 0 0; }
+.optin-success h3 { font-size: var(--text-xl); margin-bottom: var(--space-2); }
+.optin-success:focus-visible { outline-offset: 6px; }
+
+/* ---------- Footer ---------- */
+.site-footer { background: var(--color-asphalt); color: var(--color-curb); padding-block: var(--space-12) var(--space-6); }
+.site-footer a { color: var(--color-mustard); }
+.site-footer a:hover { color: var(--color-mustard-light); }
+.site-footer :focus-visible { outline-color: var(--color-mustard); }
+.footer-grid { display: grid; grid-template-columns: 1.2fr 1.4fr 1fr; gap: var(--space-8); }
+.footer-tag { margin-top: var(--space-3); color: var(--color-smoke); }
+.footer-title { font-size: var(--text-lg); margin-bottom: var(--space-3); }
+.footer-links { list-style: none; margin: 0; padding: 0; display: grid; gap: var(--space-2); }
+.footer-links a { display: inline-block; padding-block: 0.15rem; }
+.site-footer .store-note { color: var(--color-smoke); margin-top: var(--space-2); }
+.footer-fine { border-top: 1px solid var(--color-asphalt-soft); margin-top: var(--space-8); padding-top: var(--space-4); font-size: var(--text-xs); color: var(--color-smoke); }
+.footer-fine p { margin: 0; max-width: 90ch; }
+
+/* ---------- Responsive ---------- */
+@media (max-width: 960px) {
+  .hero-grid { grid-template-columns: 1fr; gap: 0; }
+  .hero-copy { padding-bottom: var(--space-4); }
+  .hero-art { margin-inline: calc(-1 * var(--space-6)); max-height: 340px; }
+  .finder { grid-template-columns: 1fr; }
+  .tickets-scroll { flex: none; overflow: visible; min-height: 0; padding: 0; margin: 0; }
+  .truck-map { height: min(58vh, 30rem); min-height: 20rem; }
+  .updates-grid { grid-template-columns: 1fr; }
+  .footer-grid { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 640px) {
+  h2 { font-size: 2.5rem; }
+  .wrap { width: min(100% - 2 * var(--space-4), var(--layout-max-width)); }
+  .site-header nav { display: none; }
+  .header-cta { margin-left: auto; }
+  .brand img { width: 140px; }
+  .hero-grid { padding-top: var(--space-8); }
+  .hero-art { margin-inline: calc(-1 * var(--space-4)); }
+  .finder-section { padding-block: var(--space-12); }
+  .ticket { padding-inline: var(--space-4); }
+  .updates-panel { padding: var(--space-6); }
+  .footer-grid { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 360px) {
+  .brand img { width: 118px; }
+  .header-cta { padding-inline: var(--space-3); font-size: var(--text-sm); }
+  .header-row { gap: var(--space-3); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { transition-duration: 0.01ms !important; animation-duration: 0.01ms !important; scroll-behavior: auto !important; }
+}
+
+@media (forced-colors: active) {
+  .ticket, .store-btn, .chip, .btn { border: 2px solid CanvasText; }
+  .status::before { forced-color-adjust: none; }
+}

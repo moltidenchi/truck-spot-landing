@@ -1,0 +1,21 @@
+{
+  "name": "truck-spot-landing",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Truck Spot logo and landing page concept: static HTML/CSS/vanilla JS with a Leaflet + OpenStreetMap demo map.",
+  "license": "MIT",
+  "type": "module",
+  "scripts": {
+    "test": "node --test \"tests/*.test.mjs\"",
+    "lint:html": "html-validate index.html style-guide.html",
+    "tokens": "node tools/build_tokens.mjs",
+    "serve": "python3 -m http.server 8000",
+    "dist": "bash tools/make_dist.sh"
+  },
+  "devDependencies": {
+    "html-validate": "11.21.0"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data: https://tile.openstreetmap.org; font-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <title>Truck Spot: Find Food Trucks Near You, Right Now</title>
+  <meta name="description" content="Truck Spot shows which food trucks are open around you, what they serve and how far away they are. Concept landing page with a live demo map.">
+  <meta name="theme-color" content="#FFC23C">
+  <meta property="og:title" content="Truck Spot: Find Food Trucks Near You">
+  <meta property="og:description" content="See open food trucks around you on a live map, browse menus and hours, and get updates.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="assets/img/og-image.png">
+  <link rel="icon" href="assets/favicon/favicon.ico" sizes="48x48">
+  <link rel="icon" href="assets/favicon/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="assets/favicon/apple-touch-icon-180.png">
+  <link rel="manifest" href="site.webmanifest">
+  <link rel="preload" href="assets/fonts/BigShouldersDisplay-600-900.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="assets/vendor/leaflet-1.9.4/leaflet.css">
+  <link rel="stylesheet" href="assets/css/tokens.css">
+  <link rel="stylesheet" href="assets/css/fonts.css">
+  <link rel="stylesheet" href="assets/css/site.css">
+  <script src="assets/vendor/leaflet-1.9.4/leaflet.js" defer></script>
+  <script src="assets/js/app.js" type="module"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="wrap header-row">
+      <a class="brand" href="./" aria-label="Truck Spot home">
+        <img src="assets/logo/svg/truckspot-horizontal.svg" alt="Truck Spot" width="180" height="47">
+      </a>
+      <nav aria-label="Main">
+        <ul class="nav-list">
+          <li><a href="#map">Map</a></li>
+          <li><a href="#trucks">Menus &amp; Hours</a></li>
+          <li><a href="#updates">Updates</a></li>
+        </ul>
+      </nav>
+      <a class="btn btn-ink header-cta" href="#download">Get the App</a>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="wrap hero-grid">
+        <div class="hero-copy">
+          <h1 id="hero-title">Hungry? The good trucks are parked closer than you think.</h1>
+          <p class="hero-lede">Truck Spot shows which food trucks are open around you right now, what they’re serving and how far you’ll walk.</p>
+          <div class="store-buttons" id="hero-download">
+            <a class="store-btn" href="#" data-store="App Store" aria-describedby="store-note">
+              <svg class="store-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="6" y="2" width="12" height="20" rx="2.5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M10.5 18.5h3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+              <span><small>Download on the</small> App Store</span>
+            </a>
+            <a class="store-btn" href="#" data-store="Google Play" aria-describedby="store-note">
+              <svg class="store-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 3v12m0 0-5-5m5 5 5-5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <span><small>Get it on</small> Google Play</span>
+            </a>
+          </div>
+          <p class="store-note" id="store-note">Store links are placeholders until the app is published.</p>
+          <p class="hero-live" id="hero-live"><a href="#map">12 demo trucks are on the map below.</a></p>
+        </div>
+        <div class="hero-art" aria-hidden="true">
+          <svg viewBox="0 0 600 520" focusable="false">
+            <defs>
+              <symbol id="mini-pin" viewBox="0 0 32 42">
+                <path d="M16 41 4.3 23.2A14 14 0 1 1 27.7 23.2Z" fill="#C8281B"/>
+                <circle cx="16" cy="14" r="5" fill="#FFFFFF"/>
+              </symbol>
+            </defs>
+            <path class="road" d="M-40 600C70 480 40 360 190 330S460 320 520 200 570 60 660 20" fill="none" stroke="#1D2127" stroke-width="66" stroke-linecap="round"/>
+            <path class="road-line" d="M-40 600C70 480 40 360 190 330S460 320 520 200 570 60 660 20" fill="none" stroke="#FFFFFF" stroke-width="5" stroke-dasharray="22 18"/>
+            <use href="#mini-pin" x="96" y="268" width="34" height="44"/>
+            <use href="#mini-pin" x="420" y="236" width="30" height="40"/>
+            <use href="#mini-pin" x="548" y="34" width="26" height="34"/>
+            <g class="hero-truck" transform="translate(300 360)">
+              <ellipse cx="118" cy="128" rx="120" ry="9" fill="#1D2127" opacity=".18"/>
+              <rect x="0" y="12" width="168" height="98" rx="12" fill="#C8281B"/>
+              <path d="M168 40h34c6 0 10 2 13 6l19 26c2 3 3 6 3 10v20c0 4-3 8-8 8h-61z" fill="#C8281B"/>
+              <path d="M176 48h24c3 0 6 1 8 4l14 20h-46z" fill="#F1F2F4"/>
+              <rect x="20" y="42" width="116" height="40" rx="4" fill="#1D2127"/>
+              <rect x="14" y="80" width="128" height="8" rx="4" fill="#F1F2F4"/>
+              <g>
+                <rect x="14" y="24" width="128" height="14" fill="#FFFFFF"/>
+                <rect x="30" y="24" width="16" height="14" fill="#FFC23C"/>
+                <rect x="62" y="24" width="16" height="14" fill="#FFC23C"/>
+                <rect x="94" y="24" width="16" height="14" fill="#FFC23C"/>
+                <rect x="126" y="24" width="16" height="14" fill="#FFC23C"/>
+                <circle cx="22" cy="38" r="8" fill="#FFFFFF"/>
+                <circle cx="38" cy="38" r="8" fill="#FFC23C"/>
+                <circle cx="54" cy="38" r="8" fill="#FFFFFF"/>
+                <circle cx="70" cy="38" r="8" fill="#FFC23C"/>
+                <circle cx="86" cy="38" r="8" fill="#FFFFFF"/>
+                <circle cx="102" cy="38" r="8" fill="#FFC23C"/>
+                <circle cx="118" cy="38" r="8" fill="#FFFFFF"/>
+                <circle cx="134" cy="38" r="8" fill="#FFC23C"/>
+              </g>
+              <circle cx="46" cy="112" r="18" fill="#1D2127"/><circle cx="46" cy="112" r="7" fill="#F1F2F4"/>
+              <circle cx="196" cy="112" r="18" fill="#1D2127"/><circle cx="196" cy="112" r="7" fill="#F1F2F4"/>
+            </g>
+          </svg>
+        </div>
+      </div>
+    </section>
+
+    <section class="finder-section" id="map" aria-labelledby="map-title">
+      <div class="wrap finder-head">
+        <div>
+          <h2 id="map-title">Trucks Near You</h2>
+          <p class="section-lede">Every pin is a truck that’s parked and serving. Pick one to see its menu and hours, or tap a ticket to find it on the map.</p>
+        </div>
+        <div class="locate">
+          <button class="btn btn-ink" type="button" id="locate-btn">
+            <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4" fill="currentColor"/><path d="M12 2v3m0 14v3M2 12h3m14 0h3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><circle cx="12" cy="12" r="7.5" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+            <span class="btn-label">Use My Location</span>
+          </button>
+          <p class="locate-status" id="locate-status" role="status">Showing demo trucks around downtown Austin, TX.</p>
+        </div>
+      </div>
+
+      <div class="wrap finder">
+        <div class="finder-map">
+          <section id="truck-map" class="truck-map" aria-label="Map of nearby food trucks" aria-describedby="map-help"></section>
+          <p class="map-help" id="map-help">Use the plus and minus buttons or your keyboard to zoom; each truck in the list has a Show on Map button.</p>
+          <noscript><p class="noscript">The live map needs JavaScript. The truck list below is still readable without it.</p></noscript>
+        </div>
+
+        <div class="finder-list" id="trucks">
+          <h3 class="list-title">Menus &amp; Hours</h3>
+          <div class="filters" role="group" aria-label="Filter by cuisine" id="cuisine-filters"></div>
+          <div class="list-tools">
+            <label class="toggle"><input type="checkbox" id="open-only"> <span>Open now only</span></label>
+            <p class="result-count" id="result-count" aria-live="polite"></p>
+          </div>
+          <section class="tickets-scroll" aria-label="Truck list, sorted by distance" tabindex="0">
+            <ul class="tickets" id="truck-list"></ul>
+            <div class="empty" id="empty-state" hidden>
+              <p>No trucks match these filters right now.</p>
+              <button class="btn btn-outline" type="button" id="clear-filters">Clear Filters</button>
+            </div>
+          </section>
+          <p class="demo-note">All trucks, menus, prices and hours here are fictional demo data.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="updates" id="updates" aria-labelledby="updates-title">
+      <div class="wrap updates-grid">
+        <div class="updates-copy">
+          <h2 id="updates-title">New Trucks, Straight to Your Inbox</h2>
+          <p>Occasional emails about new trucks near you, pop-up events and menu drops. Unsubscribe anytime.</p>
+        </div>
+        <div class="updates-panel">
+          <form class="optin" id="optin" novalidate>
+            <label for="optin-email">Email address</label>
+            <div class="optin-row">
+              <input id="optin-email" name="email" type="email" autocomplete="email" inputmode="email" spellcheck="false" placeholder="name@example.com" aria-describedby="optin-error optin-hint" required>
+              <button class="btn btn-ink" type="submit">Get Updates</button>
+            </div>
+            <p class="field-error" id="optin-error" aria-live="polite"></p>
+            <p class="hint" id="optin-hint">Demo only: this page doesn’t send or store your address.</p>
+          </form>
+          <div class="optin-success" id="optin-success" tabindex="-1" hidden>
+            <h3>You’re on the List</h3>
+            <p id="optin-success-text">In the live app we’d now send a confirmation email. This demo sent nothing and stored nothing.</p>
+            <button class="btn btn-outline" type="button" id="optin-reset">Use Another Address</button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer" id="download">
+    <div class="wrap footer-grid">
+      <div>
+        <img src="assets/logo/svg/truckspot-horizontal-on-dark.svg" alt="Truck Spot" width="180" height="47" loading="lazy">
+        <p class="footer-tag">Street food, found.</p>
+      </div>
+      <div>
+        <h2 class="footer-title">Get the App</h2>
+        <div class="store-buttons store-buttons--dark">
+          <a class="store-btn" href="#" data-store="App Store" aria-describedby="store-note-footer">
+            <svg class="store-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="6" y="2" width="12" height="20" rx="2.5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M10.5 18.5h3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+            <span><small>Download on the</small> App Store</span>
+          </a>
+          <a class="store-btn" href="#" data-store="Google Play" aria-describedby="store-note-footer">
+            <svg class="store-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 3v12m0 0-5-5m5 5 5-5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <span><small>Get it on</small> Google Play</span>
+          </a>
+        </div>
+        <p class="store-note" id="store-note-footer">Placeholder links until the store listings are live.</p>
+      </div>
+      <nav aria-label="Footer">
+        <h2 class="footer-title">Design</h2>
+        <ul class="footer-links">
+          <li><a href="style-guide.html">Style guide</a></li>
+          <li><a href="docs/design-tokens/tokens.json">Design tokens (JSON)</a></li>
+          <li><a href="https://github.com/moltidenchi/truck-spot-landing">Source on GitHub</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="wrap footer-fine">
+      <p>Concept site for a Freelancer.com design contest. Truck names, menus, prices and hours are fictional demo data. Map data © <a href="https://www.openstreetmap.org/copyright">OpenStreetMap contributors</a>.</p>
+    </div>
+    <p class="sr-only" id="store-status" role="status"></p>
+  </footer>
+</body>
+</html>
